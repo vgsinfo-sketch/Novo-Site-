@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "Order": {
+      "title": "Order",
+      "description": "Customer plan purchase information",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "phone": { "type": "string" },
+        "cpf": { "type": "string" },
+        "address": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "city": { "type": "string" },
+        "zipCode": { "type": "string" },
+        "complement": { "type": "string" },
+        "paymentMethod": { "type": "string", "enum": ["pix", "debito", "credito"] },
+        "planName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "phone", "cpf", "address", "neighborhood", "city", "zipCode", "paymentMethod", "planName", "createdAt"]
+    },
+    "Contact": {
+      "title": "Contact",
+      "description": "User contact/lead information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "message": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "phone", "message", "createdAt"]
+    },
+    "Partner": {
+      "title": "Partner",
+      "description": "Prospective business partner information",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "partnerType": { "type": "string", "enum": ["vendedor", "distribuidor", "ponto_de_venda"] },
+        "observations": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullName", "phone", "email", "partnerType", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer purchase orders"
+    },
+    "/contacts/{contactId}": {
+      "schema": "Contact",
+      "description": "User contact messages"
+    },
+    "/partners/{partnerId}": {
+      "schema": "Partner",
+      "description": "Business partner applications"
+    }
+  }
+}

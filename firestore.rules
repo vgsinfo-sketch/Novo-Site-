@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Reuseable helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Validation for Order
+    function isValidOrder(data) {
+      return data.keys().hasAll(['fullName', 'phone', 'cpf', 'address', 'neighborhood', 'city', 'zipCode', 'paymentMethod', 'planName', 'createdAt'])
+        && data.fullName is string && data.fullName.size() <= 200
+        && data.phone is string && data.phone.size() <= 20
+        && data.cpf is string && data.cpf.size() <= 14
+        && data.address is string && data.address.size() <= 300
+        && data.neighborhood is string && data.neighborhood.size() <= 100
+        && data.city is string && data.city.size() <= 100
+        && data.zipCode is string && data.zipCode.size() <= 9
+        && (!('complement' in data) || (data.complement is string && data.complement.size() <= 200))
+        && data.paymentMethod in ['pix', 'debito', 'credito']
+        && data.planName is string
+        && data.createdAt is timestamp;
+    }
+
+    // Validation for Contact
+    function isValidContact(data) {
+      return data.keys().hasAll(['name', 'email', 'phone', 'message', 'createdAt'])
+        && data.name is string && data.name.size() <= 200
+        && data.email is string && data.email.size() <= 200
+        && data.phone is string && data.phone.size() <= 20
+        && data.message is string && data.message.size() <= 2000
+        && data.createdAt is timestamp;
+    }
+
+    // Validation for Partner
+    function isValidPartner(data) {
+      return data.keys().hasAll(['fullName', 'phone', 'email', 'partnerType', 'createdAt'])
+        && data.fullName is string && data.fullName.size() <= 200
+        && data.phone is string && data.phone.size() <= 20
+        && data.email is string && data.email.size() <= 200
+        && data.partnerType in ['vendedor', 'distribuidor', 'ponto_de_venda']
+        && (!('observations' in data) || (data.observations is string && data.observations.size() <= 2000))
+        && data.createdAt is timestamp;
+    }
+
+    match /orders/{orderId} {
+      allow create: if isValidOrder(request.resource.data);
+      // Permitindo leitura para o Painel Admin local
+      allow read, list, delete: if true; 
+    }
+
+    match /contacts/{contactId} {
+      allow create: if isValidContact(request.resource.data);
+      allow read, list, delete: if true;
+    }
+
+    match /partners/{partnerId} {
+      allow create: if isValidPartner(request.resource.data);
+      allow read, list, delete: if true;
+    }
+  }
+}
