@@ -32,7 +32,7 @@ export const SearchSection = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
                 </span>
-                Visitante? Use o ID de demonstração: <strong className="ml-1 cursor-pointer hover:underline" onClick={() => setId('8824')}>8824</strong>
+                Visitante? Use o ID de demonstração: <strong className="ml-1 cursor-pointer hover:underline" onClick={() => setId('TEST123')}>TEST123</strong>
               </span>
             </div>
           </div>
