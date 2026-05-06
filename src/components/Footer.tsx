@@ -66,9 +66,7 @@ export const Footer = ({ onOpenPartner }: FooterProps) => {
                 Seja um Parceiro
               </button>
               <a 
-                href="https://appinfosaude.com.br/#/admin-login" 
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#admin" 
                 className="text-gray-700 hover:text-white transition-colors cursor-pointer"
               >
                 Portal Admin
