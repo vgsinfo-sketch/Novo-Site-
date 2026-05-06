@@ -20,6 +20,7 @@ import { AdminPanel } from './components/AdminPanel';
 import { CheckoutModal } from './components/CheckoutModal';
 import { ContactModal } from './components/ContactModal';
 import { PartnerModal } from './components/PartnerModal';
+import { FloatingAssistant } from './components/FloatingAssistant';
 
 export default function App() {
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -72,6 +73,7 @@ export default function App() {
         isOpen={isPartnerOpen} 
         onClose={() => setIsPartnerOpen(false)} 
       />
+      <FloatingAssistant />
     </div>
   );
 }

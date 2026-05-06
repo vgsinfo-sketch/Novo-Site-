@@ -10,7 +10,7 @@ export const AdminPanel = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [activeTab, setActiveTab] = useState<'orders' | 'contacts' | 'partners'>('orders');
+  const [activeTab, setActiveTab] = useState<'orders' | 'contacts' | 'partners'>('contacts');
   const [orders, setOrders] = useState<any[]>([]);
   const [contacts, setContacts] = useState<any[]>([]);
   const [partners, setPartners] = useState<any[]>([]);
