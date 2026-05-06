@@ -98,7 +98,7 @@ export const FloatingAssistant = () => {
                       </div>
                     ) : (
                       <iframe
-                        src="https://www.youtube.com/embed/ItFMhgATfn4?autoplay=1&rel=0&modestbranding=1"
+                        src="https://www.youtube.com/embed/0b9CL_ALXg4?autoplay=1&rel=0&modestbranding=1"
                         title="YouTube video player 2"
                         className="w-full h-full"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
