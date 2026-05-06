@@ -8,7 +8,7 @@ export const SearchSection = () => {
 
   const handleSearch = () => {
     if (id.trim()) {
-      window.open(`https://info-saude-gamma.vercel.app/#/public-profile/${id.trim()}`, '_blank');
+      window.open(`https://appinfosaude.com.br/#/public-profile/${id.trim()}`, '_blank');
     }
   };
 

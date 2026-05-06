@@ -87,6 +87,12 @@ export const PlansSection = ({ onOpenCheckout }: PlansSectionProps) => {
                       + {plan.setup}
                     </div>
                   )}
+                  {plan.name.includes("Premium") && (
+                    <div className={cn("text-[10px] mt-1 font-bold tracking-tight uppercase", plan.isPopular ? "text-white/60" : "text-text-gray")}>
+                      CNPJ 056400380001/42<br />
+                      Registro: INPI 850260197908
+                    </div>
+                  )}
                 </div>
               </div>
 

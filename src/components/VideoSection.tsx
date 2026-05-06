@@ -19,7 +19,7 @@ export const VideoSection = () => {
              className="relative aspect-video w-full rounded-[32px] overflow-hidden shadow-card border border-black/5 bg-soft-gray"
            >
               <iframe
-                src="https://www.youtube.com/embed/eqfLo4mZVgk"
+                src="https://www.youtube.com/embed/sR5JIG8MJlk"
                 title="Ainda com dúvidas ? - Info+Saúde"
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

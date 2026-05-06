@@ -18,7 +18,7 @@ export const Hero = ({ onOpenContact }: HeroProps) => {
         >
           <h1 className="text-soft-black max-w-2xl">
             Seus dados de saúde <br />
-            <span className="text-gradient">sempre acessíveis.</span>
+            <span className="text-gradient">sempre a mão.</span>
           </h1>
           
           <p className="text-base md:text-lg text-text-gray max-w-[440px] leading-relaxed">
@@ -37,6 +37,9 @@ export const Hero = ({ onOpenContact }: HeroProps) => {
           <div className="pt-4 flex flex-col items-center lg:items-start">
              <span className="text-[12px] uppercase tracking-[1px] text-text-gray font-semibold">Mais Popular</span>
              <div className="font-bold text-xl mt-1 text-soft-black">Plano Premium</div>
+             <div className="text-[10px] text-text-gray font-bold uppercase mt-1">
+                CNPJ 056400380001/42 | Registro: INPI 850260197908
+             </div>
           </div>
         </motion.div>
 
@@ -53,7 +56,7 @@ export const Hero = ({ onOpenContact }: HeroProps) => {
               <Cpu className="w-6 h-6 md:w-8 md:h-8 opacity-60" />
             </div>
 
-            <div className="font-mono text-base md:text-[18px] tracking-[2px] mb-6 md:mb-8">•••• •••• •••• 8824</div>
+            <div className="font-mono text-base md:text-[18px] tracking-[2px] mb-6 md:mb-8">•••• •••• •••• TEST123</div>
 
             <div className="flex justify-between items-end">
                <div>

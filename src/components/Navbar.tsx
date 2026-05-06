@@ -43,7 +43,7 @@ export const Navbar = ({ onOpenPartner }: NavbarProps) => {
           Parceiros
         </button>
         <a 
-          href="https://info-saude-gamma.vercel.app/#/login" 
+          href="https://appinfosaude.com.br/#/login" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:text-brand-primary transition-colors font-bold text-soft-black"
@@ -107,7 +107,7 @@ export const Navbar = ({ onOpenPartner }: NavbarProps) => {
 
             <div className="mt-auto space-y-4">
                <a 
-                 href="https://info-saude-gamma.vercel.app/#/login" 
+                 href="https://appinfosaude.com.br/#/login" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="w-full py-5 border-2 border-brand-primary text-brand-primary rounded-2xl font-bold text-xl cursor-pointer flex items-center justify-center bg-white"
