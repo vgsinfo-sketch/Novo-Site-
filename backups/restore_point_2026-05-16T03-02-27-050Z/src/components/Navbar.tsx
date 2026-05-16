@@ -6,10 +6,9 @@ import { Logo } from './Logo';
 
 interface NavbarProps {
   onOpenPartner: () => void;
-  onOpenPartnerships: () => void;
 }
 
-export const Navbar = ({ onOpenPartner, onOpenPartnerships }: NavbarProps) => {
+export const Navbar = ({ onOpenPartner }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -42,12 +41,6 @@ export const Navbar = ({ onOpenPartner, onOpenPartnerships }: NavbarProps) => {
           className="hover:text-brand-primary transition-colors font-bold text-soft-black cursor-pointer"
         >
           Parceiros
-        </button>
-        <button 
-          onClick={onOpenPartnerships}
-          className="hover:text-brand-primary transition-colors font-bold text-soft-black cursor-pointer"
-        >
-          Convênios
         </button>
         <a 
           href="https://appinfosaude.com.br/#/login" 
@@ -109,12 +102,6 @@ export const Navbar = ({ onOpenPartner, onOpenPartnerships }: NavbarProps) => {
                  className="text-3xl font-bold text-brand-primary text-left cursor-pointer"
                >
                  Parceiros
-               </button>
-               <button 
-                 onClick={() => { onOpenPartnerships(); setMobileMenuOpen(false); }}
-                 className="text-3xl font-bold text-brand-secondary text-left cursor-pointer"
-               >
-                 Convênios
                </button>
             </div>
 

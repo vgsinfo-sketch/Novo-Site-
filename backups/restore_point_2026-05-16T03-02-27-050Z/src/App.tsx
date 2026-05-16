@@ -20,7 +20,6 @@ import { AdminPanel } from './components/AdminPanel';
 import { CheckoutModal } from './components/CheckoutModal';
 import { ContactModal } from './components/ContactModal';
 import { PartnerModal } from './components/PartnerModal';
-import { PartnershipsModal } from './components/PartnershipsModal';
 import { FloatingAssistant } from './components/FloatingAssistant';
 
 export default function App() {
@@ -28,7 +27,6 @@ export default function App() {
   const [checkoutPlan, setCheckoutPlan] = useState<string | null>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isPartnerOpen, setIsPartnerOpen] = useState(false);
-  const [isPartnershipsOpen, setIsPartnershipsOpen] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -46,10 +44,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
-      <Navbar 
-        onOpenPartner={() => setIsPartnerOpen(true)} 
-        onOpenPartnerships={() => setIsPartnershipsOpen(true)}
-      />
+      <Navbar onOpenPartner={() => setIsPartnerOpen(true)} />
       <main>
         <Hero onOpenContact={() => setIsContactOpen(true)} />
         <SearchSection />
@@ -61,10 +56,7 @@ export default function App() {
         <Testimonials />
         <CTASection onOpenContact={() => setIsContactOpen(true)} />
       </main>
-      <Footer 
-        onOpenPartner={() => setIsPartnerOpen(true)} 
-        onOpenPartnerships={() => setIsPartnershipsOpen(true)}
-      />
+      <Footer onOpenPartner={() => setIsPartnerOpen(true)} />
       <WhatsAppButton />
 
       {/* Global Modals */}
@@ -80,10 +72,6 @@ export default function App() {
       <PartnerModal 
         isOpen={isPartnerOpen} 
         onClose={() => setIsPartnerOpen(false)} 
-      />
-      <PartnershipsModal 
-        isOpen={isPartnershipsOpen} 
-        onClose={() => setIsPartnershipsOpen(false)} 
       />
       <FloatingAssistant />
     </div>

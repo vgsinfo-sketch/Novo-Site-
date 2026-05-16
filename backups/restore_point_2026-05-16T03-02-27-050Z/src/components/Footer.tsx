@@ -5,10 +5,9 @@ import { Logo } from './Logo';
 
 interface FooterProps {
   onOpenPartner: () => void;
-  onOpenPartnerships: () => void;
 }
 
-export const Footer = ({ onOpenPartner, onOpenPartnerships }: FooterProps) => {
+export const Footer = ({ onOpenPartner }: FooterProps) => {
   return (
     <footer className="bg-soft-black text-white py-20 px-6 md:px-[60px] relative">
       <div className="max-w-7xl mx-auto">
@@ -65,12 +64,6 @@ export const Footer = ({ onOpenPartner, onOpenPartnerships }: FooterProps) => {
                 className="text-gray-700 hover:text-brand-primary transition-colors cursor-pointer"
               >
                 Seja um Parceiro
-              </button>
-              <button 
-                onClick={onOpenPartnerships}
-                className="text-gray-700 hover:text-brand-secondary transition-colors cursor-pointer"
-              >
-                Convênios
               </button>
               <a 
                 href="#admin" 
